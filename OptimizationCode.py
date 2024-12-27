@@ -8,29 +8,58 @@ import pandas as pd
 
 def generate_instance_data(instance_type):
     """
-    Instancias 2 y 5 con deadlines = 1440 (medianoche) para asegurar factibilidad.
+    Genera los datos de entrada para una instancia específica basada en el tipo de hospital.
+
+    Parámetros:
+        instance_type (int): Tipo de instancia (1, 2, 3 o 5).
+
+    Retorna:
+        tuple: Contiene el número de cirugías (n), número de quirófanos (m),
+               lista de duraciones de cirugías (p), pesos/prioridades (w),
+               y deadlines (d) para cada cirugía en minutos desde la medianoche.
     """
-    if instance_type == 2:
-        # 8 cirugías de 90 min, 1 quirófano
+    if instance_type == 1:
+        # Instancia 1: Hospital urbano alta complejidad
+        n = 20  # Número total de cirugías
+        m = 7   # Número de quirófanos disponibles
+        # Detalle de las cirugías:
+        # 5 oftalmológicas (60 minutos, peso=1, deadline=10:00 AM)
+        # 10 colecistectomías (150 minutos, peso=2, deadline=12:00 PM)
+        # 5 artroscopias (180 minutos, peso=5, deadline=10:00 AM)
+        p = [60, 60, 60, 60, 60, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 180, 180, 180, 180, 180]
+        w = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5]
+        d = [600, 600, 600, 600, 600, 720, 720, 720, 720, 720, 720, 720, 720, 720, 720, 600, 600, 600, 600, 600]  # 10:00 AM y 12:00 PM
+
+    elif instance_type == 2:
+        # Instancia 2: Hospital rural con 1 quirófano
         n = 8
         m = 1
-        p = [90]*8
-        w = [2]*8
-        d = [1440]*8
+        p = [90] * 8      # Todas las cirugías duran 90 minutos
+        w = [2] * 8       # Peso=2 para todas las cirugías
+        d = [780] * 8     # Deadline de 13:00 (780 minutos desde la medianoche)
+
+    elif instance_type == 3:
+        # Instancia 3: Centro oftalmológico con 3 quirófanos
+        n = 15
+        m = 3
+        p = [60] * 15     # Todas las cirugías duran 60 minutos
+        w = [1] * 15      # Peso=1 para todas las cirugías
+        d = [600] * 15    # Deadline de 10:00 AM (600 minutos desde la medianoche)
+
     elif instance_type == 5:
-        # 10 cirugías: 5 de 150, 5 de 60, 1 quirófano
+        # Instancia 5: Región Extrema (Magallanes) con 1 quirófano
         n = 10
         m = 1
-        p = [150]*5 + [60]*5
-        w = [2]*5 + [1]*5
-        d = [1440]*10
+        p = [150, 150, 150, 150, 150, 60, 60, 60, 60, 60]  # 5 cirugías de 150 min y 5 de 60 min
+        w = [2, 2, 2, 2, 2, 1, 1, 1, 1, 1]                  # 5 cirugías con peso=2 y 5 con peso=1
+        d = [840] * 10                                     # Deadline de 14:00 (840 minutos desde la medianoche)
     else:
-        raise ValueError("Instancia no definida. Use 2 o 5.")
+        raise ValueError("Instancia no definida. Use 1, 2, 3 o 5.")
     return n, m, p, w, d
 
 def build_model(n, m, p, w, d,
-                alpha=0.5, beta=1.0, gamma=0.5,
-                bigM=1080):
+               alpha=0.5, beta=1.0, gamma=0.5,
+               bigM=1080):
     """
     Modelo MIP con disyuntiva lineal (sin multiplicar variables).
     """
@@ -89,7 +118,7 @@ def build_model(n, m, p, w, d,
                     prob += z[i][j][o] <= x[i][o], f"Disy_zij_leq_xi_{i}_{j}_{o}"
                     prob += z[i][j][o] <= x[j][o], f"Disy_zij_leq_xj_{i}_{j}_{o}"
 
-                    # z[j][i][o] <= x[i][o], z[j][i][o] <= x[j][o]
+                    # z[j][i][o] <= x[i][o}, z[j][i][o] <= x[j][o]
                     prob += z[j][i][o] <= x[i][o], f"Disy_zji_leq_xi_{i}_{j}_{o}"
                     prob += z[j][i][o] <= x[j][o], f"Disy_zji_leq_xj_{i}_{j}_{o}"
 
@@ -128,7 +157,7 @@ def build_model(n, m, p, w, d,
 
 def solve_instance(instance_type, solver_path=None):
     """
-    Resuelve la instancia (2 o 5).
+    Resuelve la instancia (1, 2, 3 o 5).
     """
     n, m, p, w, d = generate_instance_data(instance_type)
 
@@ -143,9 +172,9 @@ def solve_instance(instance_type, solver_path=None):
     print(f"Total de variables enteras/binarias: {len(int_vars)}")
 
     if solver_path:
-        solver = COIN_CMD(path=solver_path, msg=True, timeLimit=120)
+        solver = COIN_CMD(path=solver_path, msg=False, timeLimit=120)  # Desactivar mensajes del solver
     else:
-        solver = COIN_CMD(msg=True, timeLimit=120)
+        solver = COIN_CMD(msg=False, timeLimit=120)  # Desactivar mensajes del solver
 
     prob.solve(solver)
 
@@ -163,36 +192,62 @@ def solve_instance(instance_type, solver_path=None):
 
 def main():
     """
-    Ejecuta las instancias 2 y 5 con la disyuntiva lineal.
+    Ejecuta las instancias 1, 2, 3 y 5 con la disyuntiva lineal.
+    Almacena las soluciones y las muestra al final.
     """
     solver_path = None  # Ajusta si tienes CBC en una ruta distinta
+    instance_types = [1, 2, 3, 5]
 
-    for inst_type in [2, 5]:
+    # Lista para almacenar las soluciones
+    soluciones = []
+
+    for inst_type in instance_types:
         print(f"--- Resolviendo instancia {inst_type} ---")
         status, obj, x_sol, S_sol, C_sol, u_sol, O_total, n, m, p, w, d = solve_instance(
             inst_type, solver_path=solver_path
         )
 
-        print("Status:", status)
-        print("Valor Objetivo:", obj)
+        # Almacenar la solución en un diccionario
+        solucion = {
+            'Instancia': inst_type,
+            'Status': status,
+            'Valor Objetivo': obj,
+            'Asignaciones': [(i, o) for (i, o) in x_sol if x_sol[i, o] and x_sol[i, o] > 0.9],
+            'Detalles': [
+                {
+                    'Cirugía': i,
+                    'Inicio': f"{int(S_sol[i]//60):02d}:{int(S_sol[i]%60):02d}",
+                    'Fin': f"{int(C_sol[i]//60):02d}:{int(C_sol[i]%60):02d}",
+                    'Retraso': u_sol[i]
+                }
+                for i in range(n)
+            ],
+            'Ociosidad Total': O_total
+        }
 
-        # Asignaciones (donde x_sol ~ 1)
-        asignaciones = [(i, o) for (i,o) in x_sol if x_sol[i,o] and x_sol[i,o]>0.9]
-        print("Asignaciones (cirugía->quirófano):", asignaciones)
+        soluciones.append(solucion)
+        print(f"--- Instancia {inst_type} resuelta y almacenada ---\n")
 
-        # Detalles
-        for i in range(n):
-            ini = S_sol[i]
-            fin = C_sol[i]
-            ret = u_sol[i]
-            ini_hhmm = f"{int(ini//60):02d}:{int(ini%60):02d}"
-            fin_hhmm = f"{int(fin//60):02d}:{int(fin%60):02d}"
-            print(f"  Cirugía {i}: {ini_hhmm}-{fin_hhmm}, Retraso={ret}")
+    # Mostrar todas las soluciones al final
+    print("\n================= RESULTADOS TOTALES =================\n")
+    for solucion in soluciones:
+        print(f"=== Instancia {solucion['Instancia']} ===")
+        print(f"Status: {solucion['Status']}")
+        print(f"Valor Objetivo: {solucion['Valor Objetivo']}\n")
 
-        print("-"*50)
+        print("Asignaciones (cirugía -> quirófano):")
+        for asignacion in solucion['Asignaciones']:
+            print(f"  Cirugía {asignacion[0]} -> Quirófano {asignacion[1]}")
         print()
 
-    print("=== Fin ===")
+        print("Detalles de cada cirugía:")
+        for detalle in solucion['Detalles']:
+            print(f"  Cirugía {detalle['Cirugía']}: {detalle['Inicio']} - {detalle['Fin']}, Retraso={detalle['Retraso']}")
+        print(f"\nOciosidad Total: {solucion['Ociosidad Total']}")
+        print("-" * 60)
+        print()
+
+    print("=== Fin de todas las soluciones ===")
 
 if __name__ == "__main__":
     main()
