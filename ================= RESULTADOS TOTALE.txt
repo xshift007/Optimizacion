@@ -1,0 +1,329 @@
+================= RESULTADOS TOTALES =================
+
+=== Instancia 1 ===
+Status: Optimal
+Valor Objetivo: 23260.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 1
+  Cirugía 1 -> Quirófano 3
+  Cirugía 2 -> Quirófano 6
+  Cirugía 3 -> Quirófano 2
+  Cirugía 4 -> Quirófano 6
+  Cirugía 5 -> Quirófano 3
+  Cirugía 6 -> Quirófano 3
+  Cirugía 7 -> Quirófano 2
+  Cirugía 8 -> Quirófano 4
+  Cirugía 9 -> Quirófano 6
+  Cirugía 10 -> Quirófano 0
+  Cirugía 11 -> Quirófano 0
+  Cirugía 12 -> Quirófano 2
+  Cirugía 13 -> Quirófano 5
+  Cirugía 14 -> Quirófano 0
+  Cirugía 15 -> Quirófano 1
+  Cirugía 16 -> Quirófano 5
+  Cirugía 17 -> Quirófano 6
+  Cirugía 18 -> Quirófano 3
+  Cirugía 19 -> Quirófano 4
+
+Detalles de cada cirugía:
+  Cirugía 0: 03:00 - 04:00, Retraso=0.0
+  Cirugía 1: 08:00 - 09:00, Retraso=0.0
+  Cirugía 2: 05:30 - 06:30, Retraso=0.0
+  Cirugía 3: 00:00 - 01:00, Retraso=0.0
+  Cirugía 4: 06:30 - 07:30, Retraso=0.0
+  Cirugía 5: 05:30 - 08:00, Retraso=0.0
+  Cirugía 6: 03:00 - 05:30, Retraso=0.0
+  Cirugía 7: 03:30 - 06:00, Retraso=0.0
+  Cirugía 8: 03:00 - 05:30, Retraso=0.0
+  Cirugía 9: 03:00 - 05:30, Retraso=0.0
+  Cirugía 10: 02:30 - 05:00, Retraso=0.0
+  Cirugía 11: 05:00 - 07:30, Retraso=0.0
+  Cirugía 12: 01:00 - 03:30, Retraso=0.0
+  Cirugía 13: 03:00 - 05:30, Retraso=0.0
+  Cirugía 14: 00:00 - 02:30, Retraso=0.0
+  Cirugía 15: 00:00 - 03:00, Retraso=0.0
+  Cirugía 16: 00:00 - 03:00, Retraso=0.0
+  Cirugía 17: 00:00 - 03:00, Retraso=0.0
+  Cirugía 18: 00:00 - 03:00, Retraso=0.0
+  Cirugía 19: 00:00 - 03:00, Retraso=0.0
+
+Ociosidad Total: 16900.0
+------------------------------------------------------------
+
+=== Instancia 2 ===
+Status: Optimal
+Valor Objetivo: 3340.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 0
+  Cirugía 1 -> Quirófano 0
+  Cirugía 2 -> Quirófano 0
+  Cirugía 3 -> Quirófano 0
+  Cirugía 4 -> Quirófano 0
+  Cirugía 5 -> Quirófano 0
+  Cirugía 6 -> Quirófano 0
+  Cirugía 7 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 09:00 - 10:30, Retraso=0.0
+  Cirugía 1: 03:00 - 04:30, Retraso=0.0
+  Cirugía 2: 00:00 - 01:30, Retraso=0.0
+  Cirugía 3: 07:30 - 09:00, Retraso=0.0
+  Cirugía 4: 04:30 - 06:00, Retraso=0.0
+  Cirugía 5: 06:00 - 07:30, Retraso=0.0
+  Cirugía 6: 10:30 - 12:00, Retraso=0.0
+  Cirugía 7: 01:30 - 03:00, Retraso=0.0
+
+Ociosidad Total: 100.0
+------------------------------------------------------------
+
+=== Instancia 3 ===
+Status: Optimal
+Valor Objetivo: 3450.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 1
+  Cirugía 1 -> Quirófano 1
+  Cirugía 2 -> Quirófano 0
+  Cirugía 3 -> Quirófano 2
+  Cirugía 4 -> Quirófano 2
+  Cirugía 5 -> Quirófano 0
+  Cirugía 6 -> Quirófano 2
+  Cirugía 7 -> Quirófano 1
+  Cirugía 8 -> Quirófano 2
+  Cirugía 9 -> Quirófano 0
+  Cirugía 10 -> Quirófano 1
+  Cirugía 11 -> Quirófano 0
+  Cirugía 12 -> Quirófano 1
+  Cirugía 13 -> Quirófano 2
+  Cirugía 14 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 00:00 - 01:00, Retraso=0.0
+  Cirugía 1: 04:00 - 05:00, Retraso=0.0
+  Cirugía 2: 00:00 - 01:00, Retraso=0.0
+  Cirugía 3: 02:00 - 03:00, Retraso=0.0
+  Cirugía 4: 03:00 - 04:00, Retraso=0.0
+  Cirugía 5: 02:00 - 03:00, Retraso=0.0
+  Cirugía 6: 01:00 - 02:00, Retraso=0.0
+  Cirugía 7: 01:00 - 02:00, Retraso=0.0
+  Cirugía 8: 00:00 - 01:00, Retraso=0.0
+  Cirugía 9: 04:00 - 05:00, Retraso=0.0
+  Cirugía 10: 02:00 - 03:00, Retraso=0.0
+  Cirugía 11: 01:00 - 02:00, Retraso=0.0
+  Cirugía 12: 03:00 - 04:00, Retraso=0.0
+  Cirugía 13: 04:00 - 05:00, Retraso=0.0
+  Cirugía 14: 03:00 - 04:00, Retraso=0.0
+
+Ociosidad Total: 2100.0
+------------------------------------------------------------
+
+=== Instancia 4 ===
+Status: Optimal
+Valor Objetivo: 4752.5
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 1
+  Cirugía 1 -> Quirófano 1
+  Cirugía 2 -> Quirófano 1
+  Cirugía 3 -> Quirófano 0
+  Cirugía 4 -> Quirófano 0
+  Cirugía 5 -> Quirófano 0
+  Cirugía 6 -> Quirófano 1
+  Cirugía 7 -> Quirófano 0
+  Cirugía 8 -> Quirófano 0
+  Cirugía 9 -> Quirófano 1
+  Cirugía 10 -> Quirófano 1
+  Cirugía 11 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 05:30 - 07:30, Retraso=0.0
+  Cirugía 1: 02:45 - 04:45, Retraso=0.0
+  Cirugía 2: 00:00 - 02:00, Retraso=0.0
+  Cirugía 3: 02:45 - 04:45, Retraso=0.0
+  Cirugía 4: 00:00 - 02:00, Retraso=0.0
+  Cirugía 5: 06:15 - 08:15, Retraso=0.0
+  Cirugía 6: 07:30 - 08:15, Retraso=0.0
+  Cirugía 7: 05:30 - 06:15, Retraso=0.0
+  Cirugía 8: 02:00 - 02:45, Retraso=0.0
+  Cirugía 9: 04:45 - 05:30, Retraso=0.0
+  Cirugía 10: 02:00 - 02:45, Retraso=0.0
+  Cirugía 11: 04:45 - 05:30, Retraso=0.0
+
+Ociosidad Total: 1190.0
+------------------------------------------------------------
+
+=== Instancia 5 ===
+Status: Optimal
+Valor Objetivo: 4435.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 0
+  Cirugía 1 -> Quirófano 0
+  Cirugía 2 -> Quirófano 0
+  Cirugía 3 -> Quirófano 0
+  Cirugía 4 -> Quirófano 0
+  Cirugía 5 -> Quirófano 0
+  Cirugía 6 -> Quirófano 0
+  Cirugía 7 -> Quirófano 0
+  Cirugía 8 -> Quirófano 0
+  Cirugía 9 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 10:00 - 12:30, Retraso=0.0
+  Cirugía 1: 07:30 - 10:00, Retraso=0.0
+  Cirugía 2: 15:00 - 17:30, Retraso=210.0
+  Cirugía 3: 05:00 - 07:30, Retraso=0.0
+  Cirugía 4: 12:30 - 15:00, Retraso=60.0
+  Cirugía 5: 03:00 - 04:00, Retraso=0.0
+  Cirugía 6: 00:00 - 01:00, Retraso=0.0
+  Cirugía 7: 01:00 - 02:00, Retraso=0.0
+  Cirugía 8: 04:00 - 05:00, Retraso=0.0
+  Cirugía 9: 02:00 - 03:00, Retraso=0.0
+
+Ociosidad Total: 100.0
+------------------------------------------------------------
+
+=== Instancia 6 ===
+Status: Optimal
+Valor Objetivo: 2240.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 1
+  Cirugía 1 -> Quirófano 2
+  Cirugía 2 -> Quirófano 0
+  Cirugía 3 -> Quirófano 1
+  Cirugía 4 -> Quirófano 0
+  Cirugía 5 -> Quirófano 2
+  Cirugía 6 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 00:00 - 01:40, Retraso=0.0
+  Cirugía 1: 00:00 - 01:40, Retraso=0.0
+  Cirugía 2: 00:00 - 01:40, Retraso=0.0
+  Cirugía 3: 01:40 - 03:00, Retraso=0.0
+  Cirugía 4: 03:00 - 04:20, Retraso=0.0
+  Cirugía 5: 01:40 - 03:00, Retraso=0.0
+  Cirugía 6: 01:40 - 03:00, Retraso=0.0
+
+Ociosidad Total: 1540.0
+------------------------------------------------------------
+
+=== Instancia 7 ===
+Status: Optimal
+Valor Objetivo: 1460.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 0
+  Cirugía 1 -> Quirófano 0
+  Cirugía 2 -> Quirófano 1
+  Cirugía 3 -> Quirófano 1
+  Cirugía 4 -> Quirófano 1
+  Cirugía 5 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 01:30 - 03:00, Retraso=0.0
+  Cirugía 1: 00:00 - 01:30, Retraso=0.0
+  Cirugía 2: 00:00 - 01:30, Retraso=0.0
+  Cirugía 3: 01:30 - 03:00, Retraso=0.0
+  Cirugía 4: 03:00 - 04:30, Retraso=0.0
+  Cirugía 5: 03:00 - 04:30, Retraso=0.0
+
+Ociosidad Total: 740.0
+------------------------------------------------------------
+
+=== Instancia 8 ===
+Status: Optimal
+Valor Objetivo: 3710.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 1
+  Cirugía 1 -> Quirófano 1
+  Cirugía 2 -> Quirófano 0
+  Cirugía 3 -> Quirófano 1
+  Cirugía 4 -> Quirófano 0
+  Cirugía 5 -> Quirófano 0
+  Cirugía 6 -> Quirófano 0
+  Cirugía 7 -> Quirófano 1
+  Cirugía 8 -> Quirófano 0
+  Cirugía 9 -> Quirófano 0
+
+Detalles de cada cirugía:
+  Cirugía 0: 04:00 - 06:00, Retraso=0.0
+  Cirugía 1: 02:00 - 04:00, Retraso=0.0
+  Cirugía 2: 02:00 - 04:00, Retraso=0.0
+  Cirugía 3: 00:00 - 02:00, Retraso=0.0
+  Cirugía 4: 00:00 - 02:00, Retraso=0.0
+  Cirugía 5: 06:00 - 07:00, Retraso=0.0
+  Cirugía 6: 05:00 - 06:00, Retraso=0.0
+  Cirugía 7: 06:00 - 07:00, Retraso=0.0
+  Cirugía 8: 04:00 - 05:00, Retraso=0.0
+  Cirugía 9: 07:00 - 08:00, Retraso=0.0
+
+Ociosidad Total: 1100.0
+------------------------------------------------------------
+
+=== Instancia 9 ===
+Status: Optimal
+Valor Objetivo: 2370.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 0
+  Cirugía 1 -> Quirófano 2
+  Cirugía 2 -> Quirófano 1
+  Cirugía 3 -> Quirófano 2
+  Cirugía 4 -> Quirófano 1
+  Cirugía 5 -> Quirófano 0
+  Cirugía 6 -> Quirófano 2
+  Cirugía 7 -> Quirófano 1
+  Cirugía 8 -> Quirófano 0
+  Cirugía 9 -> Quirófano 1
+
+Detalles de cada cirugía:
+  Cirugía 0: 00:00 - 01:00, Retraso=0.0
+  Cirugía 1: 01:00 - 02:00, Retraso=0.0
+  Cirugía 2: 01:00 - 02:00, Retraso=0.0
+  Cirugía 3: 00:00 - 01:00, Retraso=0.0
+  Cirugía 4: 00:00 - 01:00, Retraso=0.0
+  Cirugía 5: 01:00 - 02:00, Retraso=0.0
+  Cirugía 6: 02:00 - 03:00, Retraso=0.0
+  Cirugía 7: 03:00 - 04:00, Retraso=0.0
+  Cirugía 8: 02:00 - 03:00, Retraso=0.0
+  Cirugía 9: 02:00 - 03:00, Retraso=0.0
+
+Ociosidad Total: 1500.0
+------------------------------------------------------------
+
+=== Instancia 10 ===
+Status: Optimal
+Valor Objetivo: 5150.0
+
+Asignaciones (cirugía -> quirófano):
+  Cirugía 0 -> Quirófano 0
+  Cirugía 1 -> Quirófano 1
+  Cirugía 2 -> Quirófano 1
+  Cirugía 3 -> Quirófano 0
+  Cirugía 4 -> Quirófano 0
+  Cirugía 5 -> Quirófano 1
+  Cirugía 6 -> Quirófano 0
+  Cirugía 7 -> Quirófano 1
+  Cirugía 8 -> Quirófano 0
+  Cirugía 9 -> Quirófano 1
+
+Detalles de cada cirugía:
+  Cirugía 0: 02:00 - 04:00, Retraso=0.0
+  Cirugía 1: 03:30 - 05:30, Retraso=0.0
+  Cirugía 2: 00:00 - 02:00, Retraso=0.0
+  Cirugía 3: 05:30 - 07:30, Retraso=0.0
+  Cirugía 4: 00:00 - 02:00, Retraso=0.0
+  Cirugía 5: 02:00 - 03:30, Retraso=0.0
+  Cirugía 6: 04:00 - 05:30, Retraso=0.0
+  Cirugía 7: 05:30 - 07:00, Retraso=0.0
+  Cirugía 8: 07:30 - 09:00, Retraso=0.0
+  Cirugía 9: 07:00 - 08:30, Retraso=0.0
+
+Ociosidad Total: 1250.0
+------------------------------------------------------------
+
+=== Fin de todas las soluciones ===
