@@ -12,7 +12,7 @@ def generate_instance_data(instance_type):
     El resto se deja comentado.
     """
 
-    if instance_type == 2:
+    if instance_type == 11:
         # Instancia 2 (Hospital rural con 1 quirófano, 8 cirugías)
         n = 8
         m = 1
@@ -21,7 +21,7 @@ def generate_instance_data(instance_type):
         d = [780]*8  # Deadline ejemplo 13:00
         return n, m, p, w, d
 
-    elif instance_type == 3:
+    elif instance_type == 6:
         # Instancia 3 (Centro oftalmológico con 3 quirófanos, 15 cirugías)
         n = 15
         m = 3
@@ -30,7 +30,7 @@ def generate_instance_data(instance_type):
         d = [600]*15  # 10:00 AM
         return n, m, p, w, d
 
-    elif instance_type == 5:
+    elif instance_type == 14:
         # Instancia 5 (Región Extrema, 1 quirófano, 10 cirugías)
         n = 10
         m = 1
@@ -41,12 +41,12 @@ def generate_instance_data(instance_type):
 
     # Instancias comentadas:
 
-    # elif instance_type == 1:
+    # elif instance_type == 12:
     #     # Instancia 1
     #     ...
-    # elif instance_type == 4:
+    # elif instance_type == 12:
     #     ...
-    # elif instance_type == 6:
+    # elif instance_type == 16:
     #     ...
     # elif instance_type == 7:
     #     ...
